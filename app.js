@@ -1,3 +1,8 @@
+    // Help function to choose a random fact
+function randomChoice(choices) {
+    const index = Math.floor(Math.random() * choices.length);
+    return choices[index];
+}
 
     // Create Dino Constructor
 
