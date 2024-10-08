@@ -5,6 +5,15 @@ function randomChoice(choices) {
 }
 
     // Create Dino Constructor
+    class Dino {
+        constructor(species, weight, height, diet, fact) {
+            this.species = species;
+            this.weight = weight;
+            this.height = height;
+            this.diet = diet;
+            this.facts = [fact]; // Store facts in an array
+        }
+    }
 
 
     // Create Dino Objects
