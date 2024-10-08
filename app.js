@@ -128,7 +128,22 @@ function randomChoice(choices) {
         });
     }
 
-    // Remove form from screen
-
 
 // On button click, prepare and display infographic
+document.getElementById("btn").addEventListener("click", () => {
+    const human = getHumanData();
+    
+    // Compare human with dinos
+    compareHeight(dinos, human);
+    compareWeight(dinos, human);
+    compareDiet(dinos, human);
+
+    // Add human to the center of the grid
+    dinos.splice(4, 0, human);
+
+    // Build and display the grid
+    buildGrids(dinos);
+
+    // Remove the form
+    document.getElementById("dino-compare").remove();
+});
