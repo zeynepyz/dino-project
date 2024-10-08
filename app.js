@@ -58,6 +58,17 @@ function randomChoice(choices) {
 
     // Create Dino Compare Method 1
     // NOTE: Weight in JSON file is in lbs, height in inches. 
+    function compareHeight(dinos, human) {
+        dinos.forEach((dino) => {
+            if (dino.species !== "Pigeon") {
+                if (dino.height > human.height) {
+                    dino.facts.push(`${dino.species} is taller than ${human.name}.`);
+                } else {
+                    dino.facts.push(`${dino.species} is shorter than ${human.name}.`);
+                }
+            }
+        });
+    }
 
     
     // Create Dino Compare Method 2
