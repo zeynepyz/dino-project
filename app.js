@@ -102,8 +102,31 @@ function randomChoice(choices) {
 
 
     // Generate Tiles for each Dino in Array
+    function buildGrids(dinos) {
+        const dinoNodes = dinos.map((dino) => {
+            const card = document.createElement("div");
+            card.classList.add("grid-item");
+            const h3 = document.createElement("h3");
+            h3.textContent = dino.species;
+            card.appendChild(h3);
+            const img = document.createElement("img");
+            img.src = `./images/${dino.species.toLowerCase()}.png`;
+            img.alt = dino.species;
+            card.appendChild(img);
+            if (dino.facts) {
+                const p = document.createElement("p");
+                p.textContent = randomChoice(dino.facts); // Show a random fact
+                card.appendChild(p);
+            }
+    
+            return card;
+        });
   
         // Add tiles to DOM
+        dinoNodes.forEach((element) => {
+            document.getElementById("grid").appendChild(element);
+        });
+    }
 
     // Remove form from screen
 
