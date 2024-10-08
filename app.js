@@ -88,6 +88,17 @@ function randomChoice(choices) {
     
     // Create Dino Compare Method 3
     // NOTE: Weight in JSON file is in lbs, height in inches.
+    function compareDiet(dinos, human) {
+        dinos.forEach((dino) => {
+            if (dino.species !== "Pigeon") {
+                if (dino.diet.toLowerCase() === human.diet.toLowerCase()) {
+                    dino.facts.push(`${dino.species} eats the same diet as ${human.name}.`);
+                } else {
+                    dino.facts.push(`${dino.species} eats a different diet than ${human.name}.`);
+                }
+            }
+        });
+    }
 
 
     // Generate Tiles for each Dino in Array
