@@ -29,6 +29,13 @@ function randomChoice(choices) {
 
 
     // Create Human Object
+    function Human(name, weight, height, diet) {
+        this.species = "Human"; // The human species
+        this.name = name;
+        this.weight = weight;
+        this.height = height; // In inches
+        this.diet = diet;
+    }
 
     // Use IIFE to get human data from form
 
