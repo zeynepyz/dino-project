@@ -17,6 +17,15 @@ function randomChoice(choices) {
 
 
     // Create Dino Objects
+    let dinos = [];
+
+(async () => {
+    const response = await fetch("./dino.json");
+    const json = await response.json();
+    dinos = json["Dinos"].map(
+        (dino) => new Dino(dino.species, dino.weight, dino.height, dino.diet, dino.fact)
+    );
+})();
 
 
     // Create Human Object
