@@ -38,6 +38,22 @@ function randomChoice(choices) {
     }
 
     // Use IIFE to get human data from form
+    function getHumanData() {
+        const name = document.getElementById("name").value;
+        const feet = document.getElementById("feet").value;
+        const inches = document.getElementById("inches").value;
+        const weight = document.getElementById("weight").value;
+        const diet = document.getElementById("diet").value;
+        return {
+            name,
+            feet: parseInt(feet),
+            inches: parseInt(inches),
+            height: parseInt(feet) * 12 + parseInt(inches), // Convert height to inches
+            weight: parseInt(weight),
+            diet,
+            species: "Human",
+        };
+    }
 
 
     // Create Dino Compare Method 1
